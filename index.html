@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" class="w3-white">
+<head>
+	<!-- META ============================================= -->
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+
+	<!-- PAGE TITLE HERE ============================================= -->
+	<title> TTSpeech </title>
+	
+	<!-- MOBILE SPECIFIC ============================================= -->
+  	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+
+    <!-- FAVICONS ICON ============================================= -->
+    <link rel="icon" href="favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+    <link rel="apple-touch-icon" sizes="64x64" href="favicon.png">
+
+  	<link rel="stylesheet" type="text/css" href="css/w3.css">
+  	<link rel="stylesheet" type="text/css" href="css/all.min.css">
+  	<link rel="stylesheet" type="text/css" href="css/speech-assistant.css">
+
+</head>
+<body class="w3-sans-serif">
+
+    <!-- header -->
+	<div class="w3-block w3-white w3-padding-16 w3-container" style="z-index: 2;">
+
+        <div class="w3-bar">
+
+            <!-- name -->
+            <div class="w3-bar-item">
+                <span class="w3-large">
+                    <i class="fa fa-archive"></i>
+                    <b>TTSpeech</b>
+                </span>
+            </div>
+
+            <!-- link -->
+            <a class="w3-bar-item w3-right w3-border w3-round w3-hover-light-grey" href="#">
+                <i class="fa fa-globe"></i>
+                <span class="w3-hide-small">&nbsp;Portifolio</span>
+            </a>
+            
+            <!-- setting -->
+            <button id="darkModeBtn" style="display: none;" class="w3-bar-item w3-right w3-margin-right w3-button w3-hover-none">
+                <i class="fa fa-moon"></i>
+                <span class="w3-hide-small">&nbsp;Dark Mode</span>
+            </button>
+
+            <div class="w3-clear"></div>
+
+        </div>
+
+	</div>
+	<!-- /header -->
+
+    <!-- body -->
+	<div class="w3-block game-body">
+		
+		<!--  intro -->
+		<div id="introView" class="w3-block w3-padding-16 w3-center w3-round-large w3-animate-opacity w3-light-card-1" style="display: block;">
+			<span class="w3-block w3-padding-24">
+				<i class="fa fa-spin fa-spinner fa-2x"></i>
+			</span>
+			<span class="w3-block w3-padding-16">
+				Loading...
+			</span>
+		</div>
+		<!-- / intro -->
+
+        <!--  start -->
+		<div id="startView" class="w3-block w3-padding-16 w3-center w3-round-large w3-animate-opacity position-centering" style="display: none;">
+			<button id="startBtn" class="w3-button w3-transparent w3-padding-large w3-opacity-min w3-border w3-border-blue w3-text-blue w3-round-large w3-hover-blue w3-hover-opacity w3-light-card-inset">
+				<i class="fa fa-play"></i>
+                <span class="">&nbsp;START</span>
+            </button>
+		</div>
+		<!-- / start -->
+
+        <!--  help -->
+		<div id="helpView" class="w3-block w3-padding-16 w3-center w3-round-large w3-animate-opacity" style="display: none;">
+			<div class="w3-block w3-container" style="max-width: 600px;margin: 3rem auto;">
+                <h3 class="w3-blue w3-padding-16 w3-round w3-light-card w3-opacity-min"><b>Help & Settings</b></h3>
+                <ul class="w3-ul w3-left-align w3-block w3-light-card-1">
+                    <li class="w3-padding w3-round"><i class="fa fa-info-circle"></i> <b>Help:</b> Enter some text in the <b>Input Box</b> and press <b>Return/Enter</b> to hear it.</li>
+                    <li class="w3-padding w3-round"><i class="fa fa-cog"></i> <b>Settings:</b> Change Voices using the dropdown menu.</li>
+                    <li class="w3-padding w3-round"><i class="fa fa-cog"></i> <b>Settings:</b> Change Speech Pitch using the Range slider.</li>
+                    <li class="w3-padding w3-round"><i class="fa fa-cog"></i> <b>Settings:</b> Change Speech Rate using the Range slider.</li>
+                </ul>
+                    <div class="w3-padding-32" style="margin-top: 3rem;">
+                        <button id="mainBtn" class="w3-button w3-transparent w3-padding-large w3-opacity-min w3-border w3-border-blue w3-text-blue w3-round-large w3-hover-blue w3-hover-opacity w3-light-card-inset">
+                            <i class="fa fa-chevron-right"></i>
+                            <span class="">&nbsp;GET STARTED</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+		</div>
+		<!-- / help -->
+
+        <!-- body -->
+        <div id="mainView" class="w3-block w3-round-large w3-animate-opacity w3-light-card-1" style="display: none;">
+            <!-- title -->
+            <div class="w3-container w3-block w3-row w3-padding-16">
+                <div class="w3-col s9 w3-left-align">
+                    <span class="h3 w3-button w3-white w3-hover-white w3-hover-text-blue w3-text-blue">
+                        <b class="w3-hide-small">Speech</b>
+                        <b>Synthesiser</b>
+                    </span>
+                </div>
+                <div class="w3-col s3 w3-right-align">
+                    <button id="settBtn" class="w3-button w3-right w3-white w3-opacity-min w3-border w3-border-blue w3-text-blue w3-round-large w3-hover-blue w3-hover-opacity w3-light-card-inset">
+                        <i class="fa fa-cog"></i>
+                        <span class="w3-hide-small">&nbsp;Settings</span>
+                    </button>
+                    <button id="closeBtn" style="display: none;" class="w3-button w3-right w3-white w3-opacity-min w3-border w3-border-blue w3-text-blue w3-round-large w3-hover-blue w3-hover-opacity w3-light-card-inset">
+                        <i class="fa fa-times-circle"></i>
+                        <span class="w3-hide-small">&nbsp;Close</span>
+                    </button>
+                    <div class="w3-clear"></div>
+                </div>
+            </div>
+            <!-- / title -->
+            <!-- body -->
+            <div id="mainDataView" style="display: block;" class="w3-block w3-container w3-padding-16">
+                <div class="w3-container">
+                    <textarea placeholder="Write something here..." name="" id="textBlock" cols="30" rows="10" class="w3-input w3-border-0"></textarea>
+                </div>
+                <div id="runBtnView" class="w3-center">
+                    <button id="runBtn" style="width: 200px;" class="w3-button w3-margin-top w3-margin-bottom w3-padding-large w3-opacity-min w3-border w3-border-blue w3-text-blue w3-round-large w3-hover-blue w3-hover-opacity w3-light-card-inset">
+                        <i class="fa fa-microphone-alt"></i>
+                        <span class="">&nbsp;RUN</span>
+                    </button>
+                </div>
+                <div id="ranBtnView" style="display: none;" class="w3-center">
+                    <button id="runBtn" style="width: 200px;" class="w3-button w3-margin-top w3-margin-bottom w3-padding-large w3-opacity-min w3-border w3-border-blue w3-text-blue w3-hover-text-blue w3-round-large w3-hover-white w3-hover-opacity w3-light-card-inset">
+                        <i class="fa fa-microphone-alt"></i>
+                        <span class="">&nbsp;Running...</span>
+                    </button>
+                </div>
+            </div>
+            <div id="settDataView" style="display: none;" class="w3-block w3-container w3-padding-16">
+                <div class="w3-bar-block">
+                    <div class="w3-bar-item">
+                        <label for="selectVoice" class="h5"><b>Voice</b></label>
+                        <select id="selectVoice" class="w3-input w3-light-grey"></select>
+                    </div>
+                    <div class="w3-bar-item">
+                        <label for="pitch" class="h5"><b>Pitch</b></label>
+                        <input type="range" min="0" max="2" value="1" step="0.1" id="pitch" class="w3-input">
+                    </div>
+                    <div class="w3-bar-item">
+                        <label for="rate" class="h5"><b>Rate</b></label>
+                        <input type="range" min="0.5" max="2" value="1" step="0.1" id="rate" class="w3-input">
+                    </div>
+                    <div class="w3-bar-item w3-center w3-padding-16">
+                    </div>
+                </div>
+            </div>
+            <!-- / body -->
+        </div>
+
+        <!--  error -->
+		<div id="errorView" class="w3-block w3-padding-16 w3-round-large w3-animate-opacity position-centering" style="display: none;">
+			<div class="w3-block w3-container w3-center" style="max-width: 600px;margin: 0 auto;">
+                <div>
+                    <h1>Sorry :(</h1>
+                    <p>
+                        <i>It seems that your browser doesn't fully support the Web Speech API.</i>
+                    </p>
+                </div>
+                <p>
+                    
+                    <ul class="w3-ul w3-left-align w3-light-card-1">
+                        <li class="w3-padding w3-round"><i class="fa fa-wrench"></i> Update your browser to the latest version.</li>
+                        <li class="w3-padding w3-round"><i class="fa fa-wrench"></i> Allow the speech to <i>finish</i> and then run another</li>
+                        <li class="w3-padding w3-round"><i class="fa fa-wrench"></i> Try using the latest version of <i>Chrome, Mozilla or Edge</i></li>
+                    </ul>
+                </p>
+            </div>
+		</div>
+		<!-- / error -->
+
+    </div>
+
+    <script src="js/speech-assistant.js"></script>
+
+</body>
+</html>

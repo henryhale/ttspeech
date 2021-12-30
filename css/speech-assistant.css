@@ -1,0 +1,51 @@
+@import url('styles.css');
+
+#introView,
+#mainView {
+    max-width: 600px;
+    margin: 3rem auto;
+}
+
+#mainView {
+    min-height: 50vh;
+}
+
+.position-centering {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+#gameView {
+    max-width: 600px;
+    margin: 4rem auto;
+}
+
+.w3-light-card-inset {
+	box-shadow: inset 0 0 2px 1px #dbdce4;
+    -webkit-box-shadow: inset 0 0 2px 1px #dbdce4;
+    -moz-box-shadow: inset 0 0 2px 1px #dbdce4;
+    -ms-box-shadow: inset 0 0 2px 1px #dbdce4;
+    -o-box-shadow: inset 0 0 2px 1px #dbdce4;
+}
+
+@media screen and (max-width: 600px) {
+    .w3-light-card,
+    .w3-light-card-1 {
+        box-shadow: none;
+        -o-box-shadow: none;
+        -ms-box-shadow: none;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+    #introView,
+    #mainView {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
