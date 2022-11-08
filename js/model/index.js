@@ -34,7 +34,7 @@ xSpeech.populateVoiceList = function () {
     // fetch voices
     xSpeech.voices = xSpeech.synth.getVoices();
     // loop through while creating an Option Element for the Select Element
-    for(i = 0; i < xSpeech.voices.length ; i++) {
+    for(let i = 0; i < xSpeech.voices.length ; i++) {
         // create Option Element
         let option = document.createElement('option');
         // The name and language of the Voice
