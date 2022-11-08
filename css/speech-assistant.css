@@ -1,4 +1,83 @@
-@import url('styles.css');
+/* defaults */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+html,
+body {
+  padding: 0;
+}
+
+a,
+button,
+input {
+  text-decoration: none;
+  outline: none;
+  transition: all 0.3s;
+}
+
+button {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+input {
+  line-height: normal;
+}
+
+h2,
+.h3,
+.h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: calc(1.35rem + 1.2vw);
+}
+
+@media (min-width: 1200px) {
+  h2 {
+    font-size: 2.25rem;
+  }
+}
+
+.h3 {
+  font-size: calc(1.3125rem + 0.75vw);
+}
+
+@media (min-width: 1200px) {
+  .h3 {
+    font-size: 1.875rem;
+  }
+}
+
+.h4 {
+  font-size: calc(1.275rem + 0.3vw);
+}
+
+@media (min-width: 1200px) {
+  .h4 {
+    font-size: 1.5rem;
+  }
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* Pages Styles */
 
 #introView,
 #mainView {
