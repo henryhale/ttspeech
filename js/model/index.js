@@ -1,4 +1,4 @@
-import { queryEl } from "../helpers.js";
+import { queryEl, hideEl, showEl } from "../helpers.js";
 import { switchViewTo } from "../views.js";
 
 
@@ -84,15 +84,15 @@ xSpeech.speak = function (anyText) {
     xSpeech.synth.speak(utterThis);
     
     // hide btn
-    queryEl('#runBtnView').style.display = 'none';
-    queryEl('#ranBtnView').style.display = 'block';
+    hideEl('#runBtnView');
+    showEl('#ranBtnView');
 
     // In case
     // When the running Instance is done
     utterThis.onend = function() {
         // show btn
-        queryEl('#runBtnView').style.display = 'block';
-        queryEl('#ranBtnView').style.display = 'none';
+        showEl('#runBtnView');
+        hideEl('#ranBtnView');
     }
 
     // When the running Instance is paused,
