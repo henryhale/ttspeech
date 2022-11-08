@@ -46,7 +46,7 @@ closeBtn.addEventListener('click', function () {
 
 
 // When Everything is loaded
-window.addEventListener('load', function () {
+window.addEventListener('DOMContentLoaded', function () {
 
     // Hide loader & switch to start
     switchViewTo('start');
