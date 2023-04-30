@@ -70,7 +70,7 @@ xSpeech.speak = function (anyText) {
     // What is the selected language in the SELECT Element
     let selectedOption = xSpeech.selectMenu.selectedOptions[0].getAttribute('data-name');
     // Loop through searching for the selected Language
-    for(i = 0; i < xSpeech.voices.length ; i++) {
+    for(let i = 0; i < xSpeech.voices.length ; i++) {
       if(xSpeech.voices[i].name === selectedOption) {
         utterThis.voice = xSpeech.voices[i];
         break;
